@@ -1,0 +1,23 @@
+{
+  "name": "mixcore-client",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "build:api": "pnpm --filter @mixcore/client-api build",
+    "build:sdk": "pnpm --filter @mixcore/sdk-client build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "check-types": "turbo run check-types",
+    "publish-packages": "turbo run build  && changeset version && changeset publish --filter=@mixcore/sdk-client"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.3",
+    "turbo": "^2.5.2",
+    "typescript": "5.8.2"
+  },
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=18"
+  }
+}
